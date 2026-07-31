@@ -1,0 +1,5 @@
+* text=auto
+
+# GitHub Pages parses this file's contents as the custom domain. Keep it LF-only
+# so a CRLF checkout on Windows can never end up in the published artifact.
+docs/_extra/CNAME text eol=lf

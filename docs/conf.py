@@ -6,7 +6,10 @@
 
 project = "ClassicBox"
 author = "John Ballentine"
-copyright = "2026, John Ballentine"
+
+# No copyright line in the footer. Sphinx only renders one when this is True,
+# so there is no `copyright` value to keep in sync.
+html_show_copyright = False
 
 extensions = [
     # Writes the .nojekyll file into the build output. Without it GitHub Pages

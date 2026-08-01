@@ -20,6 +20,12 @@ extensions = [
     "myst_parser",
 ]
 
+# colon_fence enables the ::: form of a directive. Needed because a ``` fenced
+# directive cannot contain a ``` code block without escalating backtick counts;
+# ::: nests around ``` cleanly, which is what the side-by-side layout needs.
+# Without this, ":::{container}" renders as literal paragraph text.
+myst_enable_extensions = ["colon_fence"]
+
 html_theme = "sphinx_rtd_theme"
 html_title = "ClassicBox"
 
@@ -28,6 +34,9 @@ html_baseurl = "https://classic.box/"
 
 html_static_path = ["_static"]
 templates_path = ["_templates"]
+
+# Loaded on every page, from _static/. Defines the .side-by-side grid.
+html_css_files = ["custom.css"]
 
 # Everything in _extra/ is copied verbatim to the ROOT of the built site.
 # That is how docs/_extra/CNAME becomes /CNAME, which is the file GitHub Pages

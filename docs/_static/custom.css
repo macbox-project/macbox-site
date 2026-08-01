@@ -1,0 +1,45 @@
+/* ---- side-by-side: image on the left, code on the right ----------------
+   Used via the `container` directive so the cells stay real MyST content --
+   the code block is a genuine Sphinx code block and keeps Pygments
+   highlighting, which a raw <pre> in an HTML block would not.
+   Collapses to a single column on narrow screens. */
+
+.side-by-side {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+  margin: 1.5rem 0;
+}
+
+/* Grid items default to min-width:auto, which lets a long code line push the
+   column wider than its track and overflow the page. This is the fix. */
+.side-by-side > * {
+  min-width: 0;
+}
+
+.side-by-side img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #e1e4e5;
+  border-radius: 4px;
+}
+
+/* Kill the theme's default block margins so the two columns start level. */
+.side-by-side .highlight,
+.side-by-side div[class^="highlight"],
+.side-by-side figure,
+.side-by-side p:first-child {
+  margin-top: 0;
+}
+
+/* Long code still scrolls inside its own column rather than widening the page. */
+.side-by-side .highlight pre {
+  overflow-x: auto;
+}
+
+@media (max-width: 900px) {
+  .side-by-side {
+    grid-template-columns: 1fr;
+  }
+}

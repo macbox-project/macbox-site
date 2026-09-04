@@ -1,13 +1,13 @@
-# classicbox-site
+# macbox-site
 
-The ClassicBox website — <https://classic.box>.
+The MacBox website: <https://mac.box/>.
 
 Sphinx + the Read the Docs theme, built and published to GitHub Pages by
 `.github/workflows/pages.yml` on every push to `main`.
 
-This is a **separate repo** that lives inside the `classicbox-notes` working tree
-(`/website/` is in the notes `.gitignore`). Commit it from inside itself:
-`git -C website ...` — never `git add` it from notes.
+This is a **separate repo** from the unchanged `classicbox-notes` emulator
+workspace. Commit website changes from inside this repo; do not stage them from
+the notes repo.
 
 ## Build locally
 
@@ -81,5 +81,8 @@ HTML bypasses Pygments, so a hand-written `<pre>` gets no highlighting. The
 
 `docs/_extra/CNAME` holds the custom domain. Sphinx copies everything in
 `_extra/` verbatim to the root of the built site, so that file lands at `/CNAME`,
-which is what GitHub Pages reads. Changing the domain means editing that file
-**and** `html_baseurl` in `docs/conf.py`, then updating DNS.
+and keeps the deployed artifact self-describing. Because this site deploys with
+a custom GitHub Actions workflow, the repository's **Settings → Pages → Custom
+domain** value must be updated separately; GitHub ignores the artifact's CNAME
+for that setting. Changing the domain also means updating `html_baseurl` in
+`docs/conf.py` and the DNS records.

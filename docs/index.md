@@ -1,7 +1,7 @@
-# ClassicBox Devlog
+# MacBox Devlog
 
-Notes from building ClassicBox. The source isn't public yet — this is just the
-build diary until it is.
+Notes from building MacBox. The source isn't public yet; this is just the build
+diary until it is.
 
 ```{toctree}
 :maxdepth: 1

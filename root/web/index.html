@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="vendor/pixel-perfect/pixel-perfect.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;}
+html,body{margin:0;padding:0;background:#eef0f3;}
+body{font-family:"Lucida Grande","Lucida Sans Unicode","Helvetica Neue",Verdana,sans-serif;color:#33383f;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;}
+img{image-rendering:auto;image-rendering:high-quality;}
+.pixel-perfect{image-rendering:pixelated;}
+[data-aqua-cursor="true"],[data-aqua-cursor="true"] *{cursor:url("assets/cursor/arrow-1x.png") 0 0,default;cursor:-webkit-image-set(url("assets/cursor/arrow-1x.png") 1x,url("assets/cursor/arrow-2x.png") 2x,url("assets/cursor/arrow-3x.png") 3x) 0 0,default;cursor:image-set(url("assets/cursor/arrow-1x.png") 1x,url("assets/cursor/arrow-2x.png") 2x,url("assets/cursor/arrow-3x.png") 3x) 0 0,default;}
+[data-aqua-cursor="true"] :where(p,h1,h2,h3,li,pre,span):not(:where(a,button,[role="button"]) *){cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke-linecap='round'%3E%3Cpath d='M8.5 3.5c1.5 0 2.5 0.5 3.5 1.5c1-1 2-1.5 3.5-1.5M8.5 20.5c1.5 0 2.5-0.5 3.5-1.5c1 1 2 1.5 3.5 1.5M12 5v14' stroke='%23fff' stroke-width='3.4'/%3E%3Cpath d='M8.5 3.5c1.5 0 2.5 0.5 3.5 1.5c1-1 2-1.5 3.5-1.5M8.5 20.5c1.5 0 2.5-0.5 3.5-1.5c1 1 2 1.5 3.5 1.5M12 5v14' stroke='%23000' stroke-width='1.4'/%3E%3C/g%3E%3C/svg%3E") 12 12,text;}
+[data-aqua-cursor="true"] a,[data-aqua-cursor="true"] a *,[data-aqua-cursor="true"] button,[data-aqua-cursor="true"] button *{cursor:url("assets/cursor/hand-1x.png") 5 0,pointer;cursor:-webkit-image-set(url("assets/cursor/hand-1x.png") 1x,url("assets/cursor/hand-2x.png") 2x,url("assets/cursor/hand-3x.png") 3x) 5 0,pointer;cursor:image-set(url("assets/cursor/hand-1x.png") 1x,url("assets/cursor/hand-2x.png") 2x,url("assets/cursor/hand-3x.png") 3x) 5 0,pointer;}
+a{color:#1c5fb8;}a:hover{color:#164a90;}
+</style>
+</helmet>
+<div data-screen-label="MacBox Home" data-aqua-cursor="{{ cursorOn }}" style="display:flex;flex-direction:column;min-height:100vh;background:#f7f8fa;color:#33383f;">
+
+  <header style="background:linear-gradient(180deg,rgba(255,255,255,0.32),rgba(0,0,0,0.12)),url('assets/brushed-metal.png') repeat 0 0 / 128px 128px #c9cbcd;box-shadow:inset 0 1px 0 rgba(255,255,255,0.8);">
+    <div style="max-width:960px;margin:0 auto;padding:22px 24px 18px;display:flex;align-items:flex-start;">
+      <div style="display:flex;align-items:flex-start;">
+        <img ref="{{ logoRef }}" class="pixel-perfect" data-pixel-perfect="{{ designScale }}" src="assets/macbox_l.png" width="47" height="64" alt="" style="display:block;image-rendering:pixelated;">
+        <img ref="{{ logoTextRef }}" class="pixel-perfect" data-pixel-perfect="{{ designScale }}" src="assets/macbox_r.png" width="210" height="64" alt="MacBox" style="display:block;image-rendering:pixelated;filter:drop-shadow(0 1px 0 rgba(255,255,255,0.9));">
+      </div>
+    </div>
+  </header>
+
+  <nav aria-label="Site" style="background:linear-gradient(180deg,#5a5a5a 0%,#2e2e2e 50%,#151515 51%,#2b2b2b 100%);position:relative;z-index:1;border-top:1px solid #6d6d6d;border-bottom:1px solid #000;box-shadow:inset 0 1px 0 rgba(255,255,255,0.18),0 1px 0 rgba(0,0,0,0.25),0 3px 6px rgba(0,0,0,0.22);">
+    <div style="max-width:960px;margin:0 auto;padding:0 24px;display:flex;overflow-x:auto;">
+      <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="5">
+        <a href="{{ t.href }}" onClick="{{ t.pick }}" onMouseEnter="{{ t.enter }}" onMouseLeave="{{ t.leave }}" style="{{ t.style }}">{{ t.label }}</a>
+      </sc-for>
+    </div>
+  </nav>
+
+  <main id="overview" style="flex:1;">
+    <div style="background:repeating-linear-gradient(180deg,#f6f7fa 0px,#f6f7fa 2px,#eceff4 2px,#eceff4 4px);">
+    <div style="max-width:960px;margin:0 auto;padding:72px 24px 80px;">
+      <p style="margin:0;font-size:12px;letter-spacing:0.06em;text-transform:uppercase;font-weight:700;color:#6b7280;">Mac OS 9 compatibility layer</p>
+      <h1 style="margin:14px 0 20px;font-size:44px;line-height:1.25;font-weight:700;letter-spacing:-0.025em;max-width:20ch;text-wrap:pretty;color:#1c1f25;text-shadow:0 1px 0 rgba(255,255,255,0.9);">Classic Mac software, running like any other app.</h1>
+      <p style="margin:0;font-size:16px;line-height:1.6;max-width:56ch;text-wrap:pretty;color:#4b515b;">MacBox is not a virtual machine. Like Wine does for Windows programs, it runs Mac OS 9 software directly on your desktop &mdash; no boot screen, no emulated screen to live inside. Open a classic app and it appears in its own window, next to everything else you have running.</p>
+      <div id="download" style="display:flex;flex-wrap:wrap;gap:12px;margin-top:32px;">
+        <div ref="{{ macMenuRef }}" style="position:relative;display:inline-flex;align-items:stretch;">
+          <button type="button" onClick="{{ toggleMacMenu }}" aria-haspopup="menu" aria-expanded="{{ macMenuOpen }}" style="position:relative;display:inline-flex;align-items:center;justify-content:center;height:44px;padding:0 0 0 20px;overflow:hidden;white-space:nowrap;border-radius:999px;font-family:inherit;font-size:15px;font-weight:600;letter-spacing:-0.01em;color:#1c1f25;cursor:pointer;border:1px solid #9aa4b0;border-bottom-color:#8f99a5;background:linear-gradient(180deg,#eff2f3 0%,#dde1e5 8%,#c7ccd2 25%,#c0c6ce 47%,#abb3be 50%,#b4bdc7 60%,#c6ced8 75%,#dae2ec 92%,#eff2f5 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,0.9),0 1px 2px rgba(20,30,50,0.25);text-shadow:0 1px 0 rgba(255,255,255,0.7);" style-hover="filter:brightness(1.04);" style-active="transform:translateY(1px);filter:brightness(0.95);"><span aria-hidden="true" style="display:inline-flex;margin-right:8px;flex:0 0 auto;filter:drop-shadow(0 1.5px 0 rgba(255,255,255,0.75));"><span style="display:block;width:24px;height:24px;background:#1c1f25;-webkit-mask:url('assets/icons/apple.svg') center / contain no-repeat;mask:url('assets/icons/apple.svg') center / contain no-repeat;"></span></span>Download for macOS<span aria-hidden="true" style="display:block;align-self:stretch;width:1px;margin-left:18px;background:#aab3bd;box-shadow:1px 0 0 rgba(255,255,255,0.7);"></span><span aria-hidden="true" style="display:flex;align-items:center;justify-content:center;width:36px;height:100%;padding-right:3px;"><span style="display:block;font-size:10px;line-height:1;transform:translateY(1px) scaleX(1.35);">▼</span></span></button>
+          <sc-if value="{{ macMenuOpen }}" hint-placeholder-val="{{ false }}">
+            <div role="menu" style="position:absolute;left:0;top:calc(100% + 6px);z-index:20;min-width:240px;padding:4px;border-radius:6px;border:1px solid #9aa4b0;background:rgba(250,251,252,0.97);box-shadow:0 1px 0 rgba(255,255,255,0.9) inset,0 10px 28px rgba(20,30,50,0.28),0 2px 6px rgba(20,30,50,0.15);">
+              <sc-for list="{{ macBuilds }}" as="b" hint-placeholder-count="2">
+                <a role="menuitem" href="{{ b.href }}" onClick="{{ b.pick }}" style="display:block;padding:7px 12px;border-radius:4px;font-size:14px;color:#1c1f25;text-decoration:none;" style-hover="background:linear-gradient(180deg,#5b93e6 0%,#3875d7 100%);color:#fff;text-decoration:none;">
+                  <span style="display:flex;flex-direction:column;gap:1px;"><span style="font-weight:600;">{{ b.name }}</span><span style="font-size:12px;opacity:0.75;">{{ b.note }}</span></span>
+                </a>
+              </sc-for>
+            </div>
+          </sc-if>
+        </div>
+        <a href="#download-windows" style="position:relative;display:inline-flex;align-items:center;justify-content:center;height:44px;padding:0 26px 0 20px;overflow:hidden;white-space:nowrap;border-radius:999px;font-size:15px;font-weight:600;letter-spacing:-0.01em;color:#1c1f25;text-decoration:none;border:1px solid #9aa4b0;border-bottom-color:#8f99a5;background:linear-gradient(180deg,#eff2f3 0%,#dde1e5 8%,#c7ccd2 25%,#c0c6ce 47%,#abb3be 50%,#b4bdc7 60%,#c6ced8 75%,#dae2ec 92%,#eff2f5 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,0.9),0 1px 2px rgba(20,30,50,0.25);text-shadow:0 1px 0 rgba(255,255,255,0.7);" style-hover="filter:brightness(1.04);color:#1c1f25;" style-active="transform:translateY(1px);filter:brightness(0.95);"><span aria-hidden="true" style="display:inline-flex;margin-right:8px;flex:0 0 auto;filter:drop-shadow(0 1.5px 0 rgba(255,255,255,0.75));"><span style="display:block;width:24px;height:24px;background:#1c1f25;-webkit-mask:url('assets/icons/windows.svg') center / contain no-repeat;mask:url('assets/icons/windows.svg') center / contain no-repeat;"></span></span>Download for Windows</a>
+        <a href="#download-ubuntu" style="position:relative;display:inline-flex;align-items:center;justify-content:center;height:44px;padding:0 26px 0 20px;overflow:hidden;white-space:nowrap;border-radius:999px;font-size:15px;font-weight:600;letter-spacing:-0.01em;color:#1c1f25;text-decoration:none;border:1px solid #9aa4b0;border-bottom-color:#8f99a5;background:linear-gradient(180deg,#eff2f3 0%,#dde1e5 8%,#c7ccd2 25%,#c0c6ce 47%,#abb3be 50%,#b4bdc7 60%,#c6ced8 75%,#dae2ec 92%,#eff2f5 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,0.9),0 1px 2px rgba(20,30,50,0.25);text-shadow:0 1px 0 rgba(255,255,255,0.7);" style-hover="filter:brightness(1.04);color:#1c1f25;" style-active="transform:translateY(1px);filter:brightness(0.95);"><span aria-hidden="true" style="display:inline-flex;margin-right:8px;flex:0 0 auto;filter:drop-shadow(0 1.5px 0 rgba(255,255,255,0.75));"><span style="display:block;width:25px;height:25px;margin-top:1px;background:#1c1f25;-webkit-mask:url('assets/icons/ubuntu.svg') center / contain no-repeat;mask:url('assets/icons/ubuntu.svg') center / contain no-repeat;"></span></span>Download for Ubuntu</a>
+      </div>
+    </div>
+    </div>
+
+    <section id="what-runs" style="background:#ffffff;border-top:1px solid #d2d5da;border-bottom:1px solid #d2d5da;">
+      <div style="max-width:960px;margin:0 auto;padding:56px 24px 60px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px 28px;">
+        <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;">
+          <div style="width:100%;overflow:hidden;border-radius:6px;border:1px solid #aeb3bc;background:#fff;box-shadow:0 8px 22px rgba(30,40,60,0.18),0 1px 3px rgba(30,40,60,0.12);"><canvas ref="{{ thumbOs9Ref }}" onClick="{{ openOs9 }}" role="img" aria-label="Mac OS 9 desktop" data-src="assets/shot-os9.png" style="display:block;width:100%;aspect-ratio:4/3;cursor:zoom-in;"></canvas></div>
+          <h2 style="margin:0;font-size:19px;line-height:1.2;font-weight:600;letter-spacing:-0.01em;color:#1c1f25;margin-top:6px;">Mac OS 9 applications</h2>
+          <p style="margin:0;font-size:14px;line-height:1.55;color:#4b515b;text-wrap:pretty;max-width:32ch;">Run PowerPC-era software directly on your desktop &mdash; the primary MacBox target</p>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;">
+          <div style="width:100%;overflow:hidden;border-radius:6px;border:1px solid #aeb3bc;background:#fff;box-shadow:0 8px 22px rgba(30,40,60,0.18),0 1px 3px rgba(30,40,60,0.12);"><canvas ref="{{ thumbSys7Ref }}" onClick="{{ openSys7 }}" role="img" aria-label="System 7 Finder window with a MacFormat CD open" data-src="assets/shot-system7.png" style="display:block;width:100%;aspect-ratio:4/3;cursor:zoom-in;"></canvas></div>
+          <h2 style="margin:0;font-size:19px;line-height:1.2;font-weight:600;letter-spacing:-0.01em;color:#1c1f25;margin-top:6px;">System 7 applications</h2>
+          <p style="margin:0;font-size:14px;line-height:1.55;color:#4b515b;text-wrap:pretty;max-width:32ch;">68k software from the mid-'90s, opened like any other program</p>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;">
+          <div style="width:100%;overflow:hidden;border-radius:6px;border:1px solid #aeb3bc;background:#fff;box-shadow:0 8px 22px rgba(30,40,60,0.18),0 1px 3px rgba(30,40,60,0.12);"><canvas ref="{{ thumbSys6Ref }}" onClick="{{ openSys6 }}" role="img" aria-label="System 6 Finder with the About the Macintosh Finder dialog" data-src="assets/shot-system6.png" style="display:block;width:100%;aspect-ratio:4/3;cursor:zoom-in;"></canvas></div>
+          <h2 style="margin:0;font-size:19px;line-height:1.2;font-weight:600;letter-spacing:-0.01em;color:#1c1f25;margin-top:6px;">System 6 classics</h2>
+          <p style="margin:0;font-size:14px;line-height:1.55;color:#4b515b;text-wrap:pretty;max-width:32ch;">Black-and-white software from the compact Mac era</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="releases" style="background:#f7f8fa;">
+    <div style="max-width:960px;margin:0 auto;padding:52px 24px 64px;display:flex;flex-direction:column;align-items:center;gap:30px;">
+      <h2 style="margin:0;font-size:26px;font-weight:600;letter-spacing:-0.02em;color:#1c1f25;text-shadow:0 1px 0 rgba(255,255,255,0.9);">Latest releases</h2>
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:36px 0;width:100%;">
+        <sc-for list="{{ releases }}" as="r" hint-placeholder-count="3">
+          <div style="flex:0 0 33.333%;display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center;">
+            <a href="{{ r.href }}" style="font-size:36px;line-height:1.1;font-weight:400;letter-spacing:-0.02em;color:#1c1f25;text-decoration:none;text-shadow:0 1px 0 rgba(255,255,255,0.9);" style-hover="color:#1c5fb8;">{{ r.version }}</a>
+            <span style="font-size:14px;color:#4b515b;">{{ r.date }}</span>
+            <span style="font-size:14px;display:flex;gap:6px;"><a href="{{ r.href }}">signature</a><span style="color:#7a8089;">&mdash;</span><a href="{{ r.href }}">changes</a></span>
+          </div>
+        </sc-for>
+      </div>
+      <a href="#all-releases" style="position:relative;display:inline-flex;align-items:center;justify-content:center;height:44px;padding:0 26px;overflow:hidden;white-space:nowrap;border-radius:999px;font-size:15px;font-weight:600;letter-spacing:-0.01em;color:#1c1f25;text-decoration:none;border:1px solid #9aa4b0;border-bottom-color:#8f99a5;background:linear-gradient(180deg,#eff2f3 0%,#dde1e5 8%,#c7ccd2 25%,#c0c6ce 47%,#abb3be 50%,#b4bdc7 60%,#c6ced8 75%,#dae2ec 92%,#eff2f5 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,0.9),0 1px 2px rgba(20,30,50,0.25);text-shadow:0 1px 0 rgba(255,255,255,0.7);" style-hover="filter:brightness(1.04);color:#1c1f25;" style-active="transform:translateY(1px);filter:brightness(0.95);">Full list of releases</a>
+    </div>
+    </section>
+  </main>
+
+
+  <footer style="border-top:1px solid #d2d5da;background:#eceef2;">
+    <div style="max-width:960px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;font-size:12px;color:#7a8089;">
+      <sc-if value="{{ showReadout }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;align-items:flex-start;gap:12px;flex-wrap:wrap;">
+          <div style="font-family:Monaco,Menlo,Consolas,monospace;font-size:11px;line-height:1.5;background:#fff;border:1px solid #aeb3bc;border-radius:4px;padding:3px 8px;color:#33383f;max-width:62ch;">{{ readoutText }}</div>
+          <img ref="{{ testRef }}" class="pixel-perfect" data-pixel-perfect="{{ designScale }}" src="assets/checker-96x12.png" width="96" height="12" alt="" title="1-pixel checkerboard through pixel-perfect.js. Flat even grey = integer. Bands or moiré = fractional." style="display:block;flex:0 0 auto;image-rendering:pixelated;outline:1px solid #aeb3bc;outline-offset:2px;">
+        </div>
+      </sc-if>
+      <span style="max-width:52ch;text-wrap:pretty;">MacBox is an independent open-source project, not affiliated with or endorsed by Apple.</span>
+      <span style="margin-left:auto;display:flex;gap:18px;font-size:12px;"><a href="#docs">Docs</a><a href="#devlog">Devlog</a><a href="#compat">Compatibility</a><a href="#forum">Forum</a><a href="https://github.com/macbox-project">GitHub</a></span>
+    </div>
+  </footer>
+
+  <sc-if value="{{ lightboxOpen }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeLightbox }}" role="dialog" aria-label="Screenshot" style="position:fixed;inset:0;z-index:50;display:flex;align-items:center;justify-content:center;padding:24px;background:rgba(20,24,30,0.78);cursor:zoom-out;">
+      <img ref="{{ lightboxRef }}" class="pixel-perfect" alt="{{ lightboxAlt }}" style="display:block;max-width:100%;max-height:100%;image-rendering:pixelated;box-shadow:0 0 0 1px rgba(255,255,255,0.25),0 24px 60px rgba(0,0,0,0.6);">
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;aquaCursor&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Theme&quot;},&quot;designScale&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;1&quot;,&quot;2&quot;,&quot;3&quot;],&quot;default&quot;:&quot;1&quot;,&quot;tsType&quot;:&quot;'1' | '2' | '3'&quot;,&quot;section&quot;:&quot;Logo (data-pixel-perfect)&quot;},&quot;readout&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Debug&quot;}}">
+class Component extends DCLogic {
+  state = { info: null, lightbox: null };
+  lightboxRef = React.createRef();
+  SHOTS = { os9: ['assets/shot-os9.png', 'Mac OS 9 desktop'], sys7: ['assets/shot-system7.png', 'System 7 Finder'], sys6: ['assets/shot-system6.png', 'System 6 Finder'] };
+  openShot(k) { return e => { e.preventDefault(); this.setState({ lightbox: k }); }; }
+  onKey = e => { if (e.key === 'Escape') { if (this.state.lightbox) this.setState({ lightbox: null }); if (this.state.macMenu) this.setState({ macMenu: false }); } };
+  macMenuRef = React.createRef();
+  thumbOs9Ref = React.createRef(); thumbSys7Ref = React.createRef(); thumbSys6Ref = React.createRef();
+  thumbSrc = {}; // src → decoded ImageData of the full screenshot
+  // Thumbnails: area-average (box filter) downsample of the native screenshot onto a canvas at exact device-pixel size.
+  // Dithered pixel art turns into flat tone instead of moiré; at 1/2 or 1/1 ratios it is exact. Crops to the 4:3 frame, top-left.
+  async renderThumbs() {
+    const dpr = window.devicePixelRatio || 1;
+    for (const ref of [this.thumbOs9Ref, this.thumbSys7Ref, this.thumbSys6Ref]) {
+      const c = ref.current; if (!c) continue;
+      const src = c.dataset.src;
+      if (!this.thumbSrc[src]) {
+        const img = new Image(); img.src = src; await img.decode().catch(() => {});
+        if (!img.naturalWidth) continue;
+        const oc = document.createElement('canvas'); oc.width = img.naturalWidth; oc.height = img.naturalHeight;
+        oc.getContext('2d').drawImage(img, 0, 0);
+        this.thumbSrc[src] = oc.getContext('2d').getImageData(0, 0, oc.width, oc.height);
+      }
+      const S = this.thumbSrc[src];
+      const cssW = c.getBoundingClientRect().width; if (!cssW) continue;
+      const dw = Math.round(cssW * dpr), dh = Math.round(dw * 3 / 4);
+      if (c.width === dw && c.height === dh && c.dataset.dpr === String(dpr)) continue;
+      // source crop to 4:3 anchored top-left
+      let sw = S.width, sh = Math.round(sw * 3 / 4); if (sh > S.height) { sh = S.height; sw = Math.round(sh * 4 / 3); }
+      c.width = dw; c.height = dh; c.dataset.dpr = String(dpr);
+      const out = new ImageData(dw, dh), o = out.data, s = S.data, sx = sw / dw, sy = sh / dh;
+      for (let y = 0; y < dh; y++) {
+        const y0 = y * sy, y1 = y0 + sy;
+        for (let x = 0; x < dw; x++) {
+          const x0 = x * sx, x1 = x0 + sx; let r = 0, g = 0, b = 0, wsum = 0;
+          for (let yy = Math.floor(y0); yy < Math.ceil(y1); yy++) {
+            const wy = Math.min(y1, yy + 1) - Math.max(y0, yy); if (wy <= 0) continue;
+            for (let xx = Math.floor(x0); xx < Math.ceil(x1); xx++) {
+              const wx = Math.min(x1, xx + 1) - Math.max(x0, xx); if (wx <= 0) continue;
+              const w = wx * wy, i = (yy * S.width + xx) * 4;
+              r += s[i] * w; g += s[i + 1] * w; b += s[i + 2] * w; wsum += w;
+            }
+          }
+          const j = (y * dw + x) * 4; o[j] = r / wsum; o[j + 1] = g / wsum; o[j + 2] = b / wsum; o[j + 3] = 255;
+        }
+      }
+      c.getContext('2d').putImageData(out, 0, 0);
+    }
+  }
+  MAC_BUILDS = [
+    { id: 'silicon', name: 'Apple silicon', note: 'M1 and later · macOS 12+', href: '#download-macos-arm64' },
+    { id: 'intel', name: 'Intel', note: '2006\u20132020 Macs · macOS 12+', href: '#download-macos-x86_64' },
+  ];
+  onDocClick = e => { if (this.state.macMenu && this.macMenuRef.current && !this.macMenuRef.current.contains(e.target)) this.setState({ macMenu: false }); };
+  logoRef = React.createRef(); logoTextRef = React.createRef(); testRef = React.createRef();
+  lib = 'loading';
+  componentDidMount() {
+    this.onResize = () => { this.apply(); clearTimeout(this.thumbT); this.thumbT = setTimeout(() => this.renderThumbs(), 120); };
+    this.renderThumbs();
+    window.addEventListener('resize', this.onResize);
+    window.addEventListener('keydown', this.onKey);
+    document.addEventListener('mousedown', this.onDocClick);
+    this.watchDpr();
+    import(new URL('vendor/pixel-perfect/pixel-perfect.js', document.baseURI).href)
+      .then(m => { this.pp = m; this.lib = 'ok'; this.apply(); })
+      .catch(e => { this.lib = 'failed to load: ' + ((e && e.message) || e); this.report(); });
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onResize);
+    window.removeEventListener('keydown', this.onKey);
+    document.removeEventListener('mousedown', this.onDocClick);
+    if (this.mq) this.mq.removeEventListener('change', this.onMq);
+  }
+  componentDidUpdate() { this.apply(); }
+  watchDpr() {
+    if (this.mq) this.mq.removeEventListener('change', this.onMq);
+    this.mq = window.matchMedia(`(resolution: ${window.devicePixelRatio || 1}dppx)`);
+    this.onMq = () => { this.watchDpr(); this.apply(); this.applyCursor(); this.renderThumbs(); };
+    this.mq.addEventListener('change', this.onMq);
+    this.applyCursor();
+  }
+  // Integer-scaled cursors: k = round(dpr); serve the k× PNG and declare its resolution as exactly `dpr`,
+  // so the browser draws it at native × k device pixels. Hotspots scale the same way.
+  applyCursor() {
+    const dpr = window.devicePixelRatio || 1, k = Math.max(1, Math.min(3, Math.round(dpr)));
+    const cur = (name, hx, hy, fb) => {
+      const u = `url("assets/cursor/${name}-${k}x.png")`, x = (hx * k / dpr).toFixed(3), y = (hy * k / dpr).toFixed(3);
+      return `cursor:${u} ${Math.round(hx * k / dpr)} ${Math.round(hy * k / dpr)},${fb};cursor:-webkit-image-set(${u} ${dpr}x) ${x} ${y},${fb};cursor:image-set(${u} ${dpr}x) ${x} ${y},${fb};`;
+    };
+    const css = `[data-aqua-cursor="true"],[data-aqua-cursor="true"] *{${cur('arrow', 0, 0, 'default')}}
+[data-aqua-cursor="true"] a,[data-aqua-cursor="true"] a *,[data-aqua-cursor="true"] button,[data-aqua-cursor="true"] button *{${cur('hand', 5, 0, 'pointer')}}`;
+    let el = document.getElementById('aqua-cursor-dpr');
+    if (!el) { el = document.createElement('style'); el.id = 'aqua-cursor-dpr'; document.head.appendChild(el); }
+    if (el.textContent !== css) el.textContent = css;
+  }
+  els() { return [this.logoRef.current, this.logoTextRef.current, this.testRef.current].filter(Boolean); }
+  async apply() {
+    if (!this.pp) return;
+    const els = this.els();
+    await Promise.all(els.map(el => el.complete ? null : el.decode().catch(() => {})));
+    els.forEach(el => this.pp.makePixelPerfect(el));
+    const lb = this.lightboxRef.current;
+    // src is assigned here (not in the template) so no request fires for an unresolved placeholder during streaming
+    if (lb && this.state.lightbox) { const want = new URL(this.SHOTS[this.state.lightbox][0], document.baseURI).href; if (lb.src !== want) lb.src = want; }
+    if (lb && !lb.complete) await lb.decode().catch(() => {});
+    if (lb && lb.naturalWidth) {
+      // largest integer multiple that fits the viewport (with padding), min 1
+      const dpr = window.devicePixelRatio || 1;
+      // largest device-pixel multiple that fits, handed to pixel-perfect.js as its design scale.
+      // The lib computes mult = round(scale × dpr), so scale = k / dpr lands on exactly k. Passed in the lib's
+      // "scale=..." query form because its bare-number form is parseInt'd (fractions would truncate).
+      // Non-integer scales log the lib's "scale must be an integer" warning; harmless.
+      const k = Math.max(1, Math.floor(Math.min((window.innerWidth - 48) * dpr / lb.naturalWidth, (window.innerHeight - 48) * dpr / lb.naturalHeight)));
+      lb.dataset.pixelPerfect = 'scale=' + (k / dpr);
+      lb.style.maxWidth = 'none'; lb.style.maxHeight = 'none';
+      this.pp.makePixelPerfect(lb);
+    }
+    this.report();
+  }
+  hostScale() {
+    let s = 1;
+    try { let w = window; while (w !== w.top && w.frameElement) { const fe = w.frameElement; if (fe.offsetWidth) s *= fe.getBoundingClientRect().width / fe.offsetWidth; w = w.parent; } } catch (e) {}
+    return s;
+  }
+  report() {
+    const dpr = window.devicePixelRatio || 1;
+    const m = el => {
+      if (!el) return null;
+      const r = el.getBoundingClientRect(), nw = el.naturalWidth || +el.getAttribute('width'), nh = el.naturalHeight || +el.getAttribute('height');
+      const kx = r.width * dpr / nw, ky = r.height * dpr / nh;
+      return { cssW: r.width, cssH: r.height, devW: r.width * dpr, devH: r.height * dpr, k: kx, integer: Math.abs(kx - Math.round(kx)) < 1e-3 && Math.abs(ky - Math.round(ky)) < 1e-3 };
+    };
+    const logo = this.logoRef.current;
+    const info = { lib: this.lib, dpr, hs: this.hostScale(), scale: logo ? logo.dataset.pixelPerfect : '', logo: m(logo), test: m(this.testRef.current) };
+    if (JSON.stringify(info) !== JSON.stringify(this.state.info)) this.setState({ info });
+  }
+  renderVals() {
+    const p = this.props, i = this.state.info, show = (p.readout ?? false) && !!i;
+    const f = n => String(Math.round(n * 100) / 100);
+    const line = (label, x) => x ? `${label} ${f(x.cssW)}×${f(x.cssH)} css → ${f(x.devW)}×${f(x.devH)} device = ×${f(x.k)} ${x.integer ? 'integer' : 'NOT INTEGER'}` : '';
+    let text = '';
+    if (show) {
+      text = i.lib !== 'ok' ? `pixel-perfect.js ${i.lib}` : `pixel-perfect.js · dpr ${i.dpr.toFixed(3)} · data-pixel-perfect=${i.scale} · ${line('logo', i.logo)} · ${line('strip', i.test)}`;
+      if (Math.abs(i.hs - 1) > 1e-6) text += ` · preview pane is scaled ×${i.hs.toFixed(3)} by the host \u2014 verify in its own tab`;
+    }
+    const TABS = [['Overview', '#overview'], ['Download', '#download'], ['Docs', '#docs'], ['Devlog', '#devlog'], ['GitHub', 'https://github.com/macbox-project']];
+    const base = { display: 'flex', alignItems: 'center', justifyContent: 'center', height: 44, minWidth: 108, padding: '0 20px', flex: '0 0 auto', color: '#fff', textDecoration: 'none', fontSize: 14, whiteSpace: 'nowrap', borderRight: '1px solid rgba(0,0,0,0.5)' };
+    const tabs = TABS.map(([label, href], idx) => {
+      const on = idx === (this.state.tab ?? 0), hov = idx === this.state.hoverTab;
+      // hover is tracked in state (style-hover can't take a computed value); mid-grey gel between bar and selected
+      // Same box in every state: dark 1px right border on all, dark left border on the first only, light 1px inset on the left.
+      // Only background/shadow/weight change, so selecting never shifts anything by a pixel.
+      const frame = idx === 0 ? { ...base, borderLeft: '1px solid rgba(0,0,0,0.5)' } : base;
+      const style = on
+        ? { ...frame, fontWeight: 600, textShadow: '0 1px 1px rgba(0,0,0,0.7), 0 2px 3px rgba(0,0,0,0.35)', background: 'linear-gradient(180deg,#8e8e8e 0%,#666666 48%,#525252 52%,#606060 100%)', boxShadow: 'inset 1px 0 0 rgba(255,255,255,0.3), inset 0 1px 0 rgba(255,255,255,0.3)' }
+        : hov
+          ? { ...frame, fontWeight: 400, textShadow: '0 1px 0 rgba(0,0,0,1), 0 2px 2px rgba(0,0,0,0.9), 0 3px 6px rgba(0,0,0,0.7)', background: 'linear-gradient(180deg,#747474 0%,#4a4a4a 50%,#353535 51%,#434343 100%)', boxShadow: 'inset 1px 0 0 rgba(255,255,255,0.14), inset 0 1px 0 rgba(255,255,255,0.2)' }
+          : { ...frame, fontWeight: 400, textShadow: '0 1px 0 rgba(0,0,0,1), 0 2px 2px rgba(0,0,0,0.9), 0 3px 6px rgba(0,0,0,0.7)', boxShadow: 'inset 1px 0 0 rgba(255,255,255,0.08)' };
+      return {
+        label, href, style,
+        enter: () => this.setState({ hoverTab: idx }),
+        leave: () => this.setState(s => (s.hoverTab === idx ? { hoverTab: null } : null)),
+        // PROTOTYPE: tabs only change selection - no navigation. Remove preventDefault when real pages exist.
+        pick: e => { e.preventDefault(); this.setState({ tab: idx }); },
+      };
+    });
+    // PLACEHOLDER release data - replace with the real feed
+    const releases = [
+      ['0.4.1', 'Aug 26th 2026'], ['0.4.0', 'Aug 12th 2026'], ['0.3.6', 'Jun 26th 2026'],
+    ].map(([version, date]) => ({ version, date, href: '#release-' + version }));
+    return { logoRef: this.logoRef, logoTextRef: this.logoTextRef, testRef: this.testRef, designScale: String(p.designScale ?? '1'), showReadout: show, readoutText: text, releases, tabs, cursorOn: String(p.aquaCursor ?? true),
+      openOs9: this.openShot('os9'), openSys7: this.openShot('sys7'), openSys6: this.openShot('sys6'),
+      lightboxOpen: !!this.state.lightbox, lightboxRef: this.lightboxRef,
+      lightboxAlt: this.state.lightbox ? this.SHOTS[this.state.lightbox][1] : '',
+      closeLightbox: () => this.setState({ lightbox: null }),
+      thumbOs9Ref: this.thumbOs9Ref, thumbSys7Ref: this.thumbSys7Ref, thumbSys6Ref: this.thumbSys6Ref,
+      macMenuRef: this.macMenuRef, macMenuOpen: !!this.state.macMenu,
+      toggleMacMenu: () => this.setState(s => ({ macMenu: !s.macMenu })),
+      macBuilds: this.MAC_BUILDS.map(b => ({ ...b, pick: () => this.setState({ macMenu: false }) })) };
+  }
+}
+</script>
+</body>
+</html>
